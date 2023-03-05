@@ -1,0 +1,126 @@
+.sidebar-area {
+  position: fixed;
+  top: var(--header-height);
+  height: 100vh;
+  overflow-y: auto;
+  width: var(--sidebar-width);
+  padding: 0 1rem 1rem 1rem;
+  transition: all 0.25s;
+  z-index: 9;
+}
+.sidebar-list {
+  position: relative;
+  border-bottom: 1px solid var(--third-bg);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.list-item {
+  list-style-type: none;
+}
+.list-item a {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  color: var(--light-text);
+  font-size: 14px;
+  font-weight: 300;
+}
+.list-item a:hover,
+.list-item a.active,
+.sidebar-area.close .list-item a.active:hover {
+  background-color: var(--second-bg);
+}
+.list-item a i {
+  margin-right: 12px;
+}
+.list-item a svg,
+.list-item a img {
+  width: 24px;
+  margin-right: 12px;
+}
+.list-item a svg path.light-text {
+  fill: var(--light-text);
+}
+.list-item a img {
+  border-radius: 50%;
+}
+.list-title {
+  padding-left: 1.25rem;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.sidebar-area.close {
+  --sidebar-width: 72px;
+  width: var(--sidebar-width);
+  padding: 0 0.25rem;
+}
+.sidebar-area.open {
+  left: 0px;
+}
+.sidebar-area.close .sidebar-list {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+.sidebar-area.close .list-item a {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 74px;
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+}
+.sidebar-area.close .list-item a.active {
+  background-color: transparent;
+}
+.sidebar-area.close .list-item a i {
+  margin-right: 0;
+}
+.sidebar-area.close .list-item.show {
+  display: flex;
+}
+.sidebar-area.close .list-item.show svg {
+  margin: 0 auto;
+}
+.sidebar-area.close .list-item,
+.sidebar-area.close .list-title {
+  display: none;
+}
+.links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0 1.25rem 1rem 1.25rem;
+}
+.sidebar-area.close .links,
+.sidebar-area.close .copyright {
+  display: none;
+}
+.link-item {
+  color: var(--gray-text);
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.copyright {
+  padding: 0 1.25rem 1rem 1.25rem;
+  height: 70px;
+  color: var(--gray-text);
+  font-size: 12px;
+  font-weight: 400;
+}
+@media screen and (max-width: 720px) {
+  .sidebar-area {
+    left: 0;
+  }
+  .sidebar-area.close {
+    left: calc(0px - var(--sidebar-width));
+  }
+}
