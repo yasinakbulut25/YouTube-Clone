@@ -8,7 +8,7 @@ You can toggle the sidebar, post's menu, and menu profile on or off.
 
 ## Live Demo
 
-You can click [here](https://weather.yasinakbulut.com) to see the live demo of the project.
+You can click [here](https://youtube.yasinakbulut.com) to see the live demo of the project.
 
 ## Project Screenshots
 
